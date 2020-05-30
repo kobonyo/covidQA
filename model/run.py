@@ -1,6 +1,5 @@
-from tf_idf import TF_IDF
-model_list = [TF_IDF()]
-model = model_list[0]
+from models import Models
+model = Models()
 while True:
     q = input("Q: ")
     a = model.predict(q)
