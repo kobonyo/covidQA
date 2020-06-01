@@ -12,7 +12,7 @@ def index(methods=['GET']):
 
 @app.route('/')
 def home(methods=['GET']):
-    return render_template("ui.html") 
+    return render_template("index.html") 
 
 @app.route("/get")
 def get_bot_response():    
