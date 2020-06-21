@@ -5,7 +5,7 @@ from nltk.corpus import stopwords
 from sklearn.metrics.pairwise import cosine_similarity 
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from collections import Counter
-from data_model import DataModel
+from data_model import *
 class Models :
     def __init__(self):
         self.data      = DataModel()

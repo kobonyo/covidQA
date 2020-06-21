@@ -6,7 +6,7 @@ import nltk
 
 class DataModel:
 
-    def __init__(self, root = '../data/'):
+    def __init__(self, root = './data/'):
         self.stop_words = set(['?',',',':','@','is','the', 'it',';'])
         self.path = [root+p for p in os.listdir(root) if p.endswith('.xlsx')]
         self.df = self.load_df() # dataframe         
