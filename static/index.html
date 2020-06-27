@@ -48,10 +48,11 @@
     $("#textInput").val("");
     $("#chatb").append(userHtml);
     document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
-    $.get("/get", {q : rawText }).done(function(data) {
+    $.get("https://lnv3ogx7y8.execute-api.us-west-2.amazonaws.com/dev/api", {q : rawText }).done(function(data) {
+      var res = JSON.parse(data).answer;
       var pre = '<div class="media w-50 ml-auto mb-3"><div class="media-body"><div class="bg-primary rounded py-2 px-3 mb-2"><p class="text-small mb-0 text-white">'
       var post = '</p> </div></div></div>'
-      var botHtml = pre + data + post;
+      var botHtml = pre + res + post;
       $("#chatb").append(botHtml);
       document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
     });
