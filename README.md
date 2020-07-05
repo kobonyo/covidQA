@@ -1,7 +1,7 @@
 # covidQA Question-Answering System
 
 With the spread of misinformation during the COVID-19 pandemic, we present a novel approach to handling COVID-19 misinformation - a question-answering system.
-The system model can can answer FAQ's about the COVID-19. The desktop app can be accessed via [DESKTOP APP LINK](https://lnv3ogx7y8.execute-api.us-west-2.amazonaws.com/dev) while the mobile app can be accessed via the Telegram UI (bot) which can be accesed via **TELEGRAM BOT UI**. The bot username is **covidqa_bot**
+The system model can answer FAQ's about the COVID-19. The desktop app can be accessed via [DESKTOP APP LINK](https://lnv3ogx7y8.execute-api.us-west-2.amazonaws.com/dev) while the mobile app can be accessed via the Telegram UI (bot) which can be accesed via **TELEGRAM**. The bot username is **covidqa_bot**
  
  # Dataset
  
