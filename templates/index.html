@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <header class="text-center">
-    <link rel="stylesheet" type="text/css" href="s.css">
+    <link rel="stylesheet" type="text/css"  href="{{url_for('static', filename='s.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -21,12 +21,13 @@
         <div class="media w-50 mb-3">
           <div class="media-body ml-3">
             <div class="bg-light rounded py-2 px-3 mb-2">
-              <p class="text-small mb-0 text-muted">Hello, I am COVID-19 Bot. I can answer some Questions about Corona Virus</p>
+              <p class="text-small mb-0 text-muted">Hello, I am COVID-19 Bot. I can answer some Questions about Corona</p>
             </div>           
           </div>
         </div>
     </div>    
       </div>
+    
       <div id="userInput">
       <!-- Typing area -->      
         <div class="input-group">
@@ -42,17 +43,21 @@
 </body>
 <script>
   function getBotResponse() {
+    var loader = '<div class="spinner"><div class="bounce1"></div> <div class="bounce2"></div>  <div class="bounce3"></div></div>';
     var rawText = $("#textInput").val();
     var preHtml =  '<div class="media w-50 mb-3"><div class="media-body ml-3"> <div class="bg-light rounded py-2 px-3 mb-2"><p class="text-small mb-0 text-muted"><p>';   
     var postHtml = '</p></div> </div> </div>';
     var userHtml = preHtml + rawText + postHtml;
     $("#textInput").val("");
     $("#chatb").append(userHtml);
+    $("#chatb").append(loader);
     document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
     $.get("/get", {q : rawText }).done(function(data) {
+      
       var pre = '<div class="media w-50 ml-auto mb-3"><div class="media-body"><div class="bg-primary rounded py-2 px-3 mb-2"><p class="text-small mb-0 text-white">';
       var post = '</p> </div></div></div>';
       var botHtml = pre + data + post;
+      $(".spinner").remove();
       $("#chatb").append(botHtml);
       document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
     });
