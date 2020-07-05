@@ -52,12 +52,22 @@
     $("#chatb").append(userHtml);
     $("#chatb").append(loader);
     document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+<<<<<<< HEAD
     $.get("/get", {q : rawText }).done(function(data) {
       
       var pre = '<div class="media w-50 ml-auto mb-3"><div class="media-body"><div class="bg-primary rounded py-2 px-3 mb-2"><p class="text-small mb-0 text-white">';
       var post = '</p> </div></div></div>';
       var botHtml = pre + data + post;
       $(".spinner").remove();
+=======
+    $.get("https://lnv3ogx7y8.execute-api.us-west-2.amazonaws.com/dev/api", {q : rawText }).done(function(data) {
+      var pre = '<div class="media w-50 ml-auto mb-3"><div class="media-body"><div class="bg-primary rounded py-2 px-3 mb-2"><p class="text-small mb-0 text-white">';
+      var post = '</p> </div></div></div>';
+      var res = JSON.parse(JSON.stringify(data));
+      //:wq!
+      //console.log(res.answer);
+       var botHtml = pre + res.answer + post;
+>>>>>>> a1f1de3eee0478455ac59671611788a75c26961d
       $("#chatb").append(botHtml);
       document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
     });
