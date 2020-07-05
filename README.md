@@ -1,5 +1,12 @@
-# covidQA
- With the spread of misinformation during this time. We present a novel approach; chatbot model which can be leveraged to provide accurate information from the relevant sources. The information used to train the model is publicly availabel from the following sources
+# COVID-19 Question-Answering System
+
+With the spread of misinformation during the COVID-19 pandemic, we present a novel approach to handling COVID-19 misinformation - a question-answering system.
+The system model can answer FAQ's about the COVID-19. The desktop app can be accessed via [DESKTOP APP LINK](https://lnv3ogx7y8.execute-api.us-west-2.amazonaws.com/dev) while the mobile app can be accessed via the Telegram UI (bot) which can be accesed via **TELEGRAM**. The bot username is **covidqa_bot**
+ 
+ # Dataset
+ 
+ The model is trained on the publicly available dataset from following sources:
+
  <ol>
  <li>https://www.health.go.ke/wp-content/uploads/2020/03/FAQs-FOR-PRESS-KIT1.pdf-and-answers.html</li>
   <li> http://www.emro.who.int/health-topics/corona-virus/questions</li>
